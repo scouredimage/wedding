@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden!important;
+  font-family: "Raleway";
+}
+
+#spotlight h1 {
+  font-size: 9em;
+  line-height: 0.85em;
+  color: #000;
+  margin: 0;
+  padding: 5px;
+  text-align: left;
+  font-weight: 300;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+
+.section {
+  margin: 0 auto;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.absolute {
+  position: absolute!important;
+}
+
+.white-fill {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.box {
+  width: 700px;
+  height: 600px;
+  display: flex;
+}
+
+.box2 {
+  width: 700px;
+  height: 600px;
+  display: flex;
+}
+
+.box3 {
+  width: 700px;
+  height: 600px;
+  display: flex;
+}
+
+.shadow {
+   -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
+   box-shadow: 0px 0px 5px 0px rgba(1, 1, 1, 0.12);
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  font-weight: 100;
+  z-index: 999;
+  width: 100%;
+  font-size:1.2em;
+  color: #f7b2b6;
+}
+
+.scroll {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  margin-left: -25px;
+  bottom: 30px;
+  opacity: .8;
+}
+
+#details_big_title {
+  color: #f7b2b6;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 5em;
+  align-self: flex-start;
+  padding-bottom: 15px;
+}
+
+#details_small_title {
+  font-size: 3em;
+  margin-top: 10px;
+  margin-bottom: -20px;
+  color: #f7b2b6;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  align-self: flex-start;
+}
+
+#directions_title {
+  font-size: 5em;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  color: #f7b2b6;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.program {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  align-self: flex-end;
+}
+
+#detailed_directions {
+  font-size: 0.9em;
+  line-height: 1.5em;
+  align-self: flex-end;
+}
+
+#details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#directions h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#spotlight {
+  background: url(bg1.png) no-repeat right center fixed;
+}
+
+#details {
+  background: url(bg2.png) no-repeat right center fixed;
+}
+
+#directions {
+  background: url(bg3.png) no-repeat right center fixed;
+}
+
+.info {
+  margin-bottom: 20px;
+}
+
+.subinfo {
+  margin-top: 5px;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  img {
+    max-width: 100%;
+  }
+  #spotlight h1 {
+    font-size: 4em;
+  }
+  #details h3 {
+    font-size: 1em;
+  }
+  #directions h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  #details_big_title {
+    font-size: 3em;
+  }
+  #details_small_title {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+  #directions_title {
+    font-size: 2em;
+    padding-bottom: 2px;
+    margin-bottom: 0px;
+  }
+  #directions .info {
+    margin-bottom: 5px;
+  }
+  .box {
+    width: 100%;
+    height: 350px;
+  }
+  .box2 {
+    width: 100%;
+    height: 500px;
+  }
+  .box3 {
+    width: 100%;
+    height: 100%;
+  }
+  .white-fill {
+    background-color: rgba(255, 255, 255, 0.90);
+  }
+  #spotlight {
+    background-image: url(bg1.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  #details {
+    background-image: url(bg2.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  #directions {
+    background-image: url(bg3.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
