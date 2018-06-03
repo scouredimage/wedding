@@ -27,11 +27,6 @@ position: relative;
 
 }
 
-
-.absolute {
-  position: absolute!important;
-}
-
 .white-fill {
   background-color: rgba(255, 255, 255, 0.7);
 }
@@ -46,8 +41,6 @@ position: relative;
   width: 500px;
   height: 550px;
   display: flex;
-  margin-left: 100px;
-  margin-top: 25px;
 }
 
 .box3 {
@@ -61,26 +54,6 @@ position: relative;
    box-shadow: 0px 0px 5px 0px rgba(1, 1, 1, 0.12);
 }
 
-.logo {
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  font-weight: 100;
-  z-index: 999;
-  width: 100%;
-  font-size:1.2em;
-  color: #f7b2b6;
-}
-
-.logoBottom {
-  position: bottom;
-  font-weight: 100;
-  z-index: 999;
-  width: 100%;
-  font-size:1em;
-  color: #f7b2b6;
-}
-
 .scroll {
   position: absolute;
   width: 50px;
@@ -91,7 +64,16 @@ position: relative;
   opacity: .8;
 }
 
-#details_big_title {
+.logo {
+  position: absolute;
+  width: 80px;
+  left: 50%;
+  margin-left: -25px;
+  top: 25px;
+  opacity: .85;
+}
+
+#details_title {
   color: #7c8e8e;
   font-weight: bold;
   text-transform: uppercase;
@@ -101,17 +83,6 @@ position: relative;
   padding-top: 25px;
   padding-left: 15px;
   padding-bottom: 20px;
-}
-
-#details_small_title {
-  font-size: 3em;
-  margin-top: 10px;
-  margin-bottom: -20px;
-  color: #877b79;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: left;
-  align-self: flex-start;
 }
 
 #directions_title {
@@ -155,8 +126,21 @@ position: relative;
 }
 
 #details {
-  background: url(bg2.png) no-repeat right center fixed, url(logo.png) no-repeat center top fixed, url(borderR.png) no-repeat right bottom fixed, url(borderL.png) no-repeat left top fixed ;
-background-size: 550px, 125px, auto, auto;
+  background: url(bg2.png),
+    url(borderR.png),
+    url(borderL.png);
+  background-repeat: no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position: right center,
+    right bottom,
+    left top;
+  background-attachment: fixed,
+    fixed,
+    fixed;
+  background-size: 550px,
+    auto,
+    auto;
 }
 
 #directions {
@@ -186,13 +170,8 @@ background-size: 550px, 125px, auto, auto;
     font-size: 1em;
     margin-bottom: 5px;
   }
-  #details_big_title {
+  #details_title {
     font-size: 3em;
-  }
-  #details_small_title {
-    font-size: 2em;
-    margin-top: 10px;
-    margin-bottom: -10px;
   }
   #directions_title {
     font-size: 2em;
@@ -217,6 +196,10 @@ background-size: 550px, 125px, auto, auto;
   .white-fill {
     background-color: rgba(255, 255, 255, 0.90);
   }
+  .logo {
+    width: 50px;
+    top: 15px;
+  }
   #spotlight {
     background-image: url(bg1.png);
     background-repeat: no-repeat;
@@ -230,10 +213,10 @@ background-size: 550px, 125px, auto, auto;
     width: 100%;
   }
   #details {
-    background-image: url(border.png);
+    background-image: url(borderL.png);
     background-repeat: no-repeat;
-/*    background-position: bottom;
-*/    background-attachment: fixed;
+    background-position: left top;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
