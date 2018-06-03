@@ -10,7 +10,7 @@ html, body {
   line-height: 0.85em;
   color: #000;
   margin: 0;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
   font-weight: 300;
   text-transform: uppercase;
@@ -18,20 +18,22 @@ html, body {
 }
 
 .section {
-  margin: 0 auto;
-  position: relative;
+margin: 0 auto;
+position: relative;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
+
 
 .absolute {
   position: absolute!important;
 }
 
 .white-fill {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .box {
@@ -41,9 +43,11 @@ html, body {
 }
 
 .box2 {
-  width: 700px;
-  height: 600px;
+  width: 500px;
+  height: 550px;
   display: flex;
+  margin-left: 100px;
+  margin-top: 25px;
 }
 
 .box3 {
@@ -59,12 +63,21 @@ html, body {
 
 .logo {
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 60px;
+  left: 10px;
   font-weight: 100;
   z-index: 999;
   width: 100%;
   font-size:1.2em;
+  color: #f7b2b6;
+}
+
+.logoBottom {
+  position: bottom;
+  font-weight: 100;
+  z-index: 999;
+  width: 100%;
+  font-size:1em;
   color: #f7b2b6;
 }
 
@@ -79,20 +92,22 @@ html, body {
 }
 
 #details_big_title {
-  color: #f7b2b6;
+  color: #7c8e8e;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  font-size: 5em;
+  font-size: 4em;
   align-self: flex-start;
-  padding-bottom: 15px;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 20px;
 }
 
 #details_small_title {
   font-size: 3em;
   margin-top: 10px;
   margin-bottom: -20px;
-  color: #f7b2b6;
+  color: #877b79;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
@@ -111,13 +126,14 @@ html, body {
 }
 
 .program {
-  font-size: 0.9em;
+  font-size: 0.8em;
   line-height: 1.5em;
+  margin-left: 15px;
   align-self: flex-end;
 }
 
 #detailed_directions {
-  font-size: 0.9em;
+  font-size: 0.8em;
   line-height: 1.5em;
   align-self: flex-end;
 }
@@ -125,7 +141,7 @@ html, body {
 #details h3 {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 #directions h3 {
@@ -139,7 +155,8 @@ html, body {
 }
 
 #details {
-  background: url(bg2.png) no-repeat right center fixed;
+  background: url(bg2.png) no-repeat right center fixed, url(logo.png) no-repeat center top fixed, url(borderR.png) no-repeat right bottom fixed, url(borderL.png) no-repeat left top fixed ;
+background-size: 550px, 125px, auto, auto;
 }
 
 #directions {
@@ -203,7 +220,7 @@ html, body {
   #spotlight {
     background-image: url(bg1.png);
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: left;
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -213,10 +230,10 @@ html, body {
     width: 100%;
   }
   #details {
-    background-image: url(bg2.png);
+    background-image: url(border.png);
     background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
+/*    background-position: bottom;
+*/    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
