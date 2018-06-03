@@ -44,7 +44,7 @@ position: relative;
 }
 
 .box3 {
-  width: 700px;
+  width: 500px;
   height: 600px;
   display: flex;
 }
@@ -86,14 +86,15 @@ position: relative;
 }
 
 #directions_title {
-  font-size: 5em;
-  margin-top: 10px;
-  padding-bottom: 20px;
-  color: #f7b2b6;
+  color: #7c8e8e;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
+  font-size: 4em;
   align-self: flex-start;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 20px;
 }
 
 .program {
@@ -144,7 +145,21 @@ position: relative;
 }
 
 #directions {
-  background: url(bg3.png) no-repeat right center fixed;
+  background: url(bg3.png),
+    url(borderR3.png),
+    url(borderL.png);
+  background-repeat: no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position: right center,
+    right bottom,
+    left top;
+  background-attachment: fixed,
+    fixed,
+    fixed;
+  background-size: 550px,
+    auto,
+    auto;
 }
 
 .info {
