@@ -53,6 +53,13 @@ html, body {
   margin-top: 50px;
 }
 
+.box4 {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  margin-left:100px;
+}
+
 .shadow {
    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
    box-shadow: 0px 0px 5px 0px rgba(1, 1, 1, 0.12);
@@ -95,6 +102,18 @@ html, body {
   text-transform: uppercase;
   text-align: left;
   font-size: 4em;
+  align-self: flex-start;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+#accomodations_title {
+  color: #7c8e8e;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -178,6 +197,21 @@ html, body {
   background-size: 600px,
     auto,
     auto;
+}
+
+#map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  margin-top: -250px;
+  height: 400px;
+  margin-left: 150px;
+}
+
+.mapboxgl-popup {
+  max-width: 400px;
+  font: 10px/20px 'Open Sans Regular', Arial, Helvetica, sans-serif;
 }
 
 .info {
