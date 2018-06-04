@@ -199,6 +199,24 @@ html, body {
     auto;
 }
 
+#accomodations {
+  background:
+    url(borderR.png),
+    url(borderL.png);
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-position:
+    right top,
+    left top;
+  background-attachment:
+    fixed,
+    fixed;
+  background-size:
+    auto,
+    auto;
+}
+
 #map {
   position: absolute;
   top: 50%;
@@ -246,22 +264,38 @@ html, body {
   #directions .info {
     margin-bottom: 10px;
   }
+  #accomodations_title {
+    font-size: 2em;
+  }
+  #map {
+    visibility: hidden;
+  }
+  .location-id {
+    visibility: hidden;
+  }
   .box {
     width: 100%;
     height: 350px;
-   margin-left: 0px;
-
+    margin-left: 0px;
+  }
+  #accomodations .info {
+    margin-bottom: 0;
   }
   .box2 {
     width: 100%;
     height: 500px;
     margin-left: 0px;
     margin-top: 0px;
-
   }
   .box3 {
     width: 100%;
     height: 500px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .box4 {
+    width: 100%;
+    height: 550px;
     margin-left: 0px;
     margin-top: 0px;
   }
@@ -297,6 +331,18 @@ html, body {
     width: 100%;
   }
   #directions {
+    background-image: url(borderL.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+  #accomodations {
     background-image: url(borderL.png);
     background-repeat: no-repeat;
     background-position: left top;

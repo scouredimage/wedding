@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Miss+Fajardose" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width">
- 	
+
 </head>
 
 
@@ -100,10 +100,10 @@
               <div class="program col-md-11 col-md-push-1">
                 <div class="info">
                   <div class="row" style="display:flex; align-items: center;">
-                    <div class="col-md-1">
+                    <div class="col-sm-1 location-id">
                       <strong>A</strong>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-sm-10">
                       <strong>Joshua Tree Inn</strong>
                       <br><a href="https://www.joshuatreeinn.com/" target="_blank">https://www.joshuatreeinn.com/</a>
                       <br>61259 Twentynine Palms Highway
@@ -113,7 +113,7 @@
                 </div>
                 <div class="info">
                   <div class="row" style="display:flex; align-items: center;">
-                    <div class="col-md-1">
+                    <div class="col-md-1 location-id">
                       <strong>B</strong>
                     </div>
                     <div class="col-md-10">
@@ -126,7 +126,7 @@
                 </div>
                 <div class="info">
                   <div class="row" style="display:flex; align-items: center;">
-                    <div class="col-md-1">
+                    <div class="col-md-1 location-id">
                       <strong>C</strong>
                     </div>
                     <div class="col-md-10">
@@ -139,7 +139,7 @@
                 </div>
                 <div class="info">
                   <div class="row" style="display:flex; align-items: center;">
-                    <div class="col-md-1">
+                    <div class="col-md-1 location-id">
                       <strong>D</strong>
                     </div>
                     <div class="col-md-10">
@@ -151,8 +151,13 @@
                   </div>
                 </div>
                 <div class="info">
-                  <strong>AirBnB</strong>
-                  <br><a href="https://www.airbnb.com/s/Joshua-Tree--CA--United-States/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJAVDJ-0XQ2oARw2sUAFr-5-Q&checkin=2018-09-21&checkout=2018-09-23&adults=2&query=Joshua%20Tree%2C%20CA%2C%20United%20States&allow_override%5B%5D=&s_tag=QrHh-sq1" target="_blank">https://www.airbnb.com/</a>
+                  <div class="row" style="display:flex; align-items: center;">
+                    <div class="col-md-1 location-id"><strong>&nbsp;</strong></div>
+                    <div class="col-md-10">
+                      <strong>AirBnB</strong>
+                      <br><a href="https://www.airbnb.com/s/Joshua-Tree--CA--United-States/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJAVDJ-0XQ2oARw2sUAFr-5-Q&checkin=2018-09-21&checkout=2018-09-23&adults=2&query=Joshua%20Tree%2C%20CA%2C%20United%20States&allow_override%5B%5D=&s_tag=QrHh-sq1" target="_blank">https://www.airbnb.com/</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -186,7 +191,7 @@
             scrollBar: true
         });
 
-        var mymap = L.map('map').setView([34.093437, -116.287940], 10.11);
+        var mymap = L.map('map').setView([34.093437, -116.287940], 9.5);
         L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'streets-v9',
             accessToken: 'pk.eyJ1Ijoic2NvdXJlZGltYWdlIiwiYSI6ImNqaHo5bG5rczB1emkzcW82am80YXdiOWMifQ.FY-C89q9cgyM6FDNMwSzVw'
