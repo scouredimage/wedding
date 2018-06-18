@@ -6,15 +6,22 @@ html, body {
 }
 
 #spotlight h1 {
-  font-size: 8.5em;
+  font-size: 8em;
   line-height: 0.85em;
   color: #3f4f4f;
-  margin: 0;
-  padding: 20px;
   text-align: left;
   font-weight: 300;
   text-transform: uppercase;
-  align-self: flex-end;
+  padding-left: 15px;
+}
+
+#spotlight h2 {
+  font-size: 1.5em;
+  color: #e59082;
+  text-align: left;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-left: 15px;
 }
 
 .section {
@@ -35,6 +42,7 @@ html, body {
   height: 600px;
   display: flex;
   margin-left:100px;
+  margin-top: 50px;
 }
 
 .box2 {
@@ -150,7 +158,7 @@ html, body {
 
 #spotlight {
   background: url(bg1.png),
-    url(borderRCover.png),
+    url(borderR.png),
     url(borderLCover.png);
   background-repeat: no-repeat,
     no-repeat,
@@ -164,7 +172,6 @@ html, body {
   background-size: 800px,
     auto,
     auto;
-
 }
 
 #details {
@@ -187,7 +194,7 @@ html, body {
 
 #directions {
   background: url(bg3.png),
-    url(borderR3.png),
+    url(borderR.png),
     url(borderL.png);
   background-repeat: no-repeat,
     no-repeat,
@@ -226,9 +233,9 @@ html, body {
   top: 50%;
   left: 50%;
   width: 450px;
-  margin-top: -250px;
+  margin-top: -200px;
   height: 400px;
-  margin-left: 150px;
+  margin-left: 80px;
 }
 
 #accomodations .info {
