@@ -68,6 +68,20 @@ html, body {
   margin-left:100px;
 }
 
+.box5 {
+  width: 500px;
+  height: 550px;
+  display: flex;
+  margin-left:100px;
+}
+
+.box6 {
+  width: 500px;
+  height: 550px;
+  display: flex;
+  margin-left:40px;
+}
+
 .shadow {
    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1);
    box-shadow: 0px 0px 5px 0px rgba(1, 1, 1, 0.12);
@@ -126,6 +140,18 @@ html, body {
   text-transform: uppercase;
   text-align: left;
   font-size: 4em;
+  align-self: flex-start;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+#thingstodo_title {
+  color: #7c8e8e;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3.5em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -250,8 +276,7 @@ html, body {
   margin-top: 10px;
 }
 
-/* Medium Devices, Desktops */
-@media only screen and (max-width: 992px) {
+@media (max-width: 767.98px) {
   img {
     max-width: 100%;
   }
