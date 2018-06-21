@@ -123,7 +123,7 @@
                     <div class="col-md-9">
                       <strong>Joshua Tree Inn</strong>
                       <br><a href="https://www.joshuatreeinn.com/" target="_blank">https://www.joshuatreeinn.com/</a>
-                      <br>61259 Twentynine Palms Highway
+                      <br>61259 Twentynine Palms Hwy
                     </div>
                   </div>
                 </div>
@@ -231,7 +231,7 @@
             </div>
             <div data-depth="0.2" class="white-fill shadow box6">
               <div class="col-md-10 col-md-push-1">
-                <h2 id="thingstodo_title">sights</h2>
+                <h2 id="thingstodo_title">explore</h2>
                 <div class="program col-md-11 col-md-push-1">
                   <div class="info">
                     <a href="https://www.nps.gov/jotr/index.htm" target="_blank">Joshua Tree National Park</a>
@@ -371,31 +371,35 @@
         },
       ];
       for (var i in locations) {
+        var mouseover = function() {
+          var location = locations[i];
+          return function(e) {
+            var legend = $(location.legend);
+            if (legend != null) {
+              legend.empty();
+              legend.append('<i class="fas fa-map-marker fa-stack-2x"></i>');
+              legend.append('<i class="fa ' + location.icon.options.icon + ' fa-inverse fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
+            }
+          };
+        }();
+        var mouseout = function() {
+          var location = locations[i];
+          return function(e) {
+            console.log("out");
+            var legend = $(location.legend);
+            if (legend != null) {
+              legend.empty();
+              legend.append('<i class="fas fa-map-marker fa-stack-2x icon-invisible"></i>');
+              legend.append('<i class="fa ' + location.icon.options.icon + ' fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
+            }
+          }
+        }();
+
         new L.marker(locations[i].latlong, {icon: locations[i].icon})
           .addTo(mymap)
           .bindTooltip(locations[i].popup)
-          .on('mouseover', function() {
-            var location = locations[i];
-            return function(e) {
-              var legend = $(location.legend);
-              if (legend != null) {
-                legend.empty();
-                legend.append('<i class="fas fa-map-marker fa-stack-2x"></i>');
-                legend.append('<i class="fa ' + location.icon.options.icon + ' fa-inverse fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
-              }
-            };
-          }())
-          .on('mouseout', function() {
-            var location = locations[i];
-            return function(e) {
-              var legend = $(location.legend);
-              if (legend != null) {
-                legend.empty();
-                legend.append('<i class="fas fa-map-marker fa-stack-2x icon-invisible"></i>');
-                legend.append('<i class="fa ' + location.icon.options.icon + ' fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
-              }
-            }
-          }());
+          .on('mouseover', mouseover)
+          .on('mouseout', mouseout);
       }
     });
   </script>
