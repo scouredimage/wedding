@@ -201,30 +201,46 @@
               <div class="col-md-10 col-md-push-1">
                 <h2 id="thingstodo_title">eat + drink</h2>
                 <div class="program col-md-11 col-md-push-1">
-                  <div class="info">
-                    <a href="https://www.pappyandharriets.com/" target="_blank">Pappy And Harriet’s</a>
-                    <br>Iconic restaurant/saloon/outdoor music venue
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 53688 Pioneertown Rd, Pioneertown
-                  </div>
-                  <div class="info">
-                    <a href="https://www.lacopinekitchen.com/" target="_blank">La Copine</a>
-                    <br>Upscale dining in the high desert
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 848 Old Woman Springs Rd, Yucca Valley
-                  </div>
-                  <div class="info">
-                    <a href="https://www.joshuatreesaloon.com" target="_blank">Joshua Tree Saloon</a>
-                    <br>Neighborhood bar with live music and karaoke
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 61835 Twentynine Palms Hwy, Joshua Tree
-                  </div>
-                  <div class="info">
-                    <a href="http://www.pieforthepeople.com" target="_blank">Pie For The People</a>
-                    <br>NYC-style pizza
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 61740 Twentynine Palms Hwy, Joshua Tree
-                  </div>
-                  <div class="info">
-                    <a href="https://jtcoffeeco.com" target="_blank">Joshua Tree Coffee Company</a>
-                    <br>Locally roasted coffee
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 61738 Twentynine Palms Hwy, Joshua Tree
+                  <div class="flip">
+                    <div id="eats_card" class="card">
+                      <div class="face front">
+                        <div class="well inner">
+                          <div id="pah" class="info">
+                            <a href="https://www.pappyandharriets.com/" target="_blank">Pappy And Harriet’s</a>
+                            <br>Iconic restaurant/saloon/outdoor music venue
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 53688 Pioneertown Rd, Pioneertown
+                          </div>
+                          <div id="lacop" class="info">
+                            <a href="https://www.lacopinekitchen.com/" target="_blank">La Copine</a>
+                            <br>Fine dining in the high desert
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 848 Old Woman Springs Rd, Yucca Valley
+                          </div>
+                          <div id="jtsalon" class="info">
+                            <a href="https://www.joshuatreesaloon.com" target="_blank">Joshua Tree Saloon</a>
+                            <br>Neighborhood bar with live music and karaoke
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 61835 Twentynine Palms Hwy, Joshua Tree
+                          </div>
+                          <div id="piepeep" class="info">
+                            <a href="http://www.pieforthepeople.com" target="_blank">Pie For The People</a>
+                            <br>NYC-style pizza
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 61740 Twentynine Palms Hwy, Joshua Tree
+                          </div>
+                          <div id="jtcoffee" class="info">
+                            <a href="https://jtcoffeeco.com" target="_blank">Joshua Tree Coffee Company</a>
+                            <br>Locally roasted coffee
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 61738 Twentynine Palms Hwy, Joshua Tree
+                          </div>
+                          <a id="toggle_eats_map" href="javascript:;"><i class="fa fa-sync"></i> Switch to map view</a>
+                        </div>
+                      </div>
+                      <div class="face back">
+                        <div class="well inner">
+                          <div id="eats_map"></div>
+                          <div style="height:10px;"></div>
+                          <a id="toggle_eats_list" href="javascript:;"><i class="fa fa-sync"></i> Switch to list view</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -233,25 +249,41 @@
               <div class="col-md-10 col-md-push-1">
                 <h2 id="thingstodo_title">explore</h2>
                 <div class="program col-md-11 col-md-push-1">
-                  <div class="info">
-                    <a href="https://www.nps.gov/jotr/index.htm" target="_blank">Joshua Tree National Park</a>
-                    <br>Hike, watch the sun rise/set, star gaze
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 6554 Park Blvd, Joshua Tree
-                  </div>
-                  <div class="info">
-                    <a href="http://www.noahpurifoy.com/" target="_blank">Noah Purifoy’s Outdoor Art Museum</a>
-                    <br>"Assemblage art" spread over 7.5 acres
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 62975 Blair Ln, Joshua Tree
-                  </div>
-                  <div class="info">
-                    <a href="https://integratron.com" target="_blank">Integratron</a>
-                    <br>Quartz crystal sound bath
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> 2477 Belfield Blvd, Landers
-                  </div>
-                  <div class="info">
-                    <a href="http://www.salvationmountain.us" target="_blank">Salvation Mountain</a>
-                    <br>Leonard Knight's technicolor mountain
-                    <br><i class="fa fa-map-pin" style="color: gray"></i> Beal Rd, Slab City
+                  <div class="flip">
+                    <div id="sights_card" class="card">
+                      <div class="face front">
+                        <div class="well inner">
+                          <div id="jtp" class="info">
+                            <a href="https://www.nps.gov/jotr/index.htm" target="_blank">Joshua Tree National Park</a>
+                            <br>Hike, watch the sun rise/set, star gaze
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 6554 Park Blvd, Joshua Tree
+                          </div>
+                          <div id="noah" class="info">
+                            <a href="http://www.noahpurifoy.com/" target="_blank">Noah Purifoy’s Outdoor Art Museum</a>
+                            <br>"Assemblage art" spread over 7.5 acres
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 62975 Blair Ln, Joshua Tree
+                          </div>
+                          <div id="integratron" class="info">
+                            <a href="https://integratron.com" target="_blank">Integratron</a>
+                            <br>Quartz crystal sound bath
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> 2477 Belfield Blvd, Landers
+                          </div>
+                          <div id="salvation" class="info">
+                            <a href="http://www.salvationmountain.us" target="_blank">Salvation Mountain</a>
+                            <br>Leonard Knight's technicolor mountain
+                            <br><i class="fa fa-map-pin" style="color: gray"></i> Beal Rd, Slab City
+                          </div>
+                          <a id="toggle_sights_map" href="javascript:;"><i class="fa fa-sync"></i> Switch to map view</a>
+                        </div>
+                      </div>
+                      <div class="face back">
+                        <div class="well inner">
+                          <div id="sights_map"></div>
+                          <div style="height:10px;"></div>
+                          <a id="toggle_sights_list" href="javascript:;"><i class="fa fa-sync"></i> Switch to list view</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -282,15 +314,15 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-        $('#outer-wrapper').fullpage({
-            scrollBar: true
-        });
+      $('#outer-wrapper').fullpage({
+        scrollBar: true
+      });
 
-        var mymap = L.map('map').setView([34.093437, -116.287940], 9.5);
+      var lodging_map = L.map('map').setView([34.093437, -116.287940], 9.5);
         L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             id: 'streets-v9',
             accessToken: 'pk.eyJ1Ijoic2NvdXJlZGltYWdlIiwiYSI6ImNqaHo5bG5rczB1emkzcW82am80YXdiOWMifQ.FY-C89q9cgyM6FDNMwSzVw'
-        }).addTo(mymap);
+        }).addTo(lodging_map);
 
       var locations = [
         {
@@ -338,7 +370,8 @@
           legend: '#ptown_motel',
           icon: L.ExtraMarkers.icon({
             innerHTML: '<i class="fa fa-chess-queen fa-stack-1x" data-fa-transform="grow-4 up-3 right-1"></i>',
-            icon: 'fa-chess-queen',
+            icon: 'fa-chess-knight',
+            iconColor: 'black',
             iconColor: 'black',
             markerColor: 'white',
             shape: 'circle',
@@ -363,13 +396,13 @@
           popup: '<strong>Mojave Sands Motel</strong><br>Wedding venue!',
           icon: L.ExtraMarkers.icon({
             innerHTML: '<i class="fa fa-heart fa-inverse fa-stack-1x" data-fa-transform="grow-4 up-3 right-1"></i>',
-            icon: 'fa-heart',
             markerColor: 'red',
             shape: 'circle',
             prefix: 'fa'
           })
         },
       ];
+
       for (var i in locations) {
         var mouseover = function() {
           var location = locations[i];
@@ -385,7 +418,6 @@
         var mouseout = function() {
           var location = locations[i];
           return function(e) {
-            console.log("out");
             var legend = $(location.legend);
             if (legend != null) {
               legend.empty();
@@ -396,11 +428,107 @@
         }();
 
         new L.marker(locations[i].latlong, {icon: locations[i].icon})
-          .addTo(mymap)
+          .addTo(lodging_map)
           .bindTooltip(locations[i].popup)
           .on('mouseover', mouseover)
           .on('mouseout', mouseout);
       }
+
+      function loadEatsMap() {
+        var map_eats = L.map('eats_map').setView([34.2, -116.4], 10.5);
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            id: 'streets-v9',
+            accessToken: 'pk.eyJ1Ijoic2NvdXJlZGltYWdlIiwiYSI6ImNqaHo5bG5rczB1emkzcW82am80YXdiOWMifQ.FY-C89q9cgyM6FDNMwSzVw'
+        }).addTo(map_eats);
+        var locations = [
+          {
+            latlong: new L.LatLng(34.157538, -116.493114),
+            popup: $('#pah')
+          },
+          {
+            latlong: new L.LatLng(34.238379, -116.440287),
+            popup: $('#lacop')
+          },
+          {
+            latlong: new L.LatLng(34.134905, -116.314428),
+            popup: $('#jtsalon')
+          },
+          {
+            latlong: new L.LatLng(34.135433, -116.316404),
+            popup: $('#piepeep')
+          },
+          {
+            latlong: new L.LatLng(34.135584, -116.316497),
+            popup: $('#jtcoffee')
+          }
+        ];
+        for (var i in locations) {
+          new L.marker(locations[i].latlong)
+            .addTo(map_eats)
+            .bindPopup(locations[i].popup[0].innerHTML);
+        }
+      }
+
+      function loadSightsMap() {
+        console.log('hi');
+        var map_sights = L.map('sights_map').setView([34.0, -115.8], 7.5);
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            id: 'streets-v9',
+            accessToken: 'pk.eyJ1Ijoic2NvdXJlZGltYWdlIiwiYSI6ImNqaHo5bG5rczB1emkzcW82am80YXdiOWMifQ.FY-C89q9cgyM6FDNMwSzVw'
+        }).addTo(map_sights);
+        var locations = [
+          {
+            latlong: new L.LatLng(34.134214, -116.315577),
+            popup: $('#jtp')
+          },
+          {
+            latlong: new L.LatLng(34.195526, -116.288430),
+            popup: $('#noah')
+          },
+          {
+            latlong: new L.LatLng(34.294541, -116.403666),
+            popup: $('#integratron')
+          },
+          {
+            latlong: new L.LatLng(33.254412, -115.472703),
+            popup: $('#salvation')
+          }
+        ];
+        for (var i in locations) {
+          new L.marker(locations[i].latlong)
+            .addTo(map_sights)
+            .bindPopup(locations[i].popup[0].innerHTML);
+        }
+      }
+
+      $('#toggle_eats_map').on('click' ,function(){
+        var loaded = false;
+        return function() {
+          $('#eats_card').toggleClass('flipped');
+          if (!loaded) {
+            loadEatsMap();
+            loaded = true;
+          }
+        }
+      }());
+      $('#toggle_eats_list').on('click' ,function(){
+        $('#eats_card').toggleClass('flipped');
+      });
+
+      $('#toggle_sights_map').on('click' ,function(){
+        var loaded = false;
+        return function() {
+          $('#sights_card').toggleClass('flipped');
+          if (!loaded) {
+            loadSightsMap();
+            loaded = true;
+          }
+        }
+      }());
+      $('#toggle_sights_list').on('click' ,function(){
+        $('#sights_card').toggleClass('flipped');
+      });
+
     });
   </script>
 
