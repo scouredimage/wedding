@@ -370,7 +370,7 @@
           legend: '#ptown_motel',
           icon: L.ExtraMarkers.icon({
             innerHTML: '<i class="fa fa-chess-queen fa-stack-1x" data-fa-transform="grow-4 up-3 right-1"></i>',
-            icon: 'fa-chess-knight',
+            icon: 'fa-chess-queen',
             iconColor: 'black',
             iconColor: 'black',
             markerColor: 'white',
@@ -403,10 +403,17 @@
         },
       ];
 
+      var markers = [];
       for (var i in locations) {
+        markers.push(new L.marker(
+          locations[i].latlong,
+          {icon: locations[i].icon}
+        ));
+
         var mouseover = function() {
           var location = locations[i];
-          return function(e) {
+          var marker = markers[i];
+          var fn = function(e) {
             var legend = $(location.legend);
             if (legend != null) {
               legend.empty();
@@ -414,10 +421,16 @@
               legend.append('<i class="fa ' + location.icon.options.icon + ' fa-inverse fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
             }
           };
+          $(location.legend).parent().parent().bind('mouseenter', function(e) {
+            fn();
+            marker.openTooltip();
+          })
+          return fn;
         }();
         var mouseout = function() {
           var location = locations[i];
-          return function(e) {
+          var marker = markers[i];
+          var fn = function(e) {
             var legend = $(location.legend);
             if (legend != null) {
               legend.empty();
@@ -425,11 +438,16 @@
               legend.append('<i class="fa ' + location.icon.options.icon + ' fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
             }
           }
+          $(location.legend).parent().parent().bind('mouseleave', function(e) {
+            fn();
+            marker.closeTooltip();
+          })
+          return fn;
         }();
 
-        new L.marker(locations[i].latlong, {icon: locations[i].icon})
+        markers[i]
           .addTo(lodging_map)
-          .bindTooltip(locations[i].popup)
+          .bindTooltip(locations[i].popup, { offset: L.point({x: 10, y: -30}) })
           .on('mouseover', mouseover)
           .on('mouseout', mouseout);
       }
