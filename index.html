@@ -200,7 +200,6 @@
                     <div class="face back">
                       <div class="well inner">
                         <div id="locations_map"></div>
-                        <div style="height:10px;"></div>
                         <button id="toggle_locations_list" class="btn btn-primary btn-sm">
                           <span class="fa fa-bars" aria-hidden="true"></span> List
                         </button>
@@ -252,7 +251,6 @@
                           <br>Locally roasted coffee
                           <br><i class="fa fa-map-pin" style="color: gray"></i> 61738 Twentynine Palms Hwy, Joshua Tree
                         </div>
-                        <div style="height:10px;"></div>
                         <button id="toggle_eats_map" class="btn btn-primary btn-sm">
                           <span class="fa fa-map" aria-hidden="true"></span> Map
                         </button>
@@ -261,7 +259,6 @@
                     <div class="face back">
                       <div class="well inner">
                         <div id="eats_map"></div>
-                        <div style="height:10px;"></div>
                         <button id="toggle_eats_list" class="btn btn-primary btn-sm">
                           <span class="fa fa-bars" aria-hidden="true"></span> List
                         </button>
@@ -309,7 +306,6 @@
                     <div class="face back">
                       <div class="well inner">
                         <div id="sights_map"></div>
-                        <div style="height:10px;"></div>
                         <button id="toggle_sights_list" class="btn btn-primary btn-sm">
                           <span class="fa fa-bars" aria-hidden="true"></span> List
                         </button>
@@ -457,10 +453,6 @@
                 legend.append('<i class="fa ' + location.icon.options.icon + ' fa-inverse fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
               }
             };
-            $(location.legend).parent().parent().bind('mouseenter', function(e) {
-              fn();
-              marker.openTooltip();
-            })
             return fn;
           }();
           var mouseout = function() {
@@ -474,10 +466,6 @@
                 legend.append('<i class="fa ' + location.icon.options.icon + ' fa-stack-1x" data-fa-transform="shrink-4 up-3"></i>');
               }
             }
-            $(location.legend).parent().parent().bind('mouseleave', function(e) {
-              fn();
-              marker.closeTooltip();
-            })
             return fn;
           }();
 
