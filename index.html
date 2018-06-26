@@ -351,7 +351,7 @@
 
       function loadLocationsMap(target) {
         var lodging_map = L
-          .map(target, { fullscreenControl: true })
+          .map(target, { fullscreenControl: { pseudoFullscreen: true } })
           .setView([34.093437, -116.287940], 9.5);
         if (L.Browser.mobile) {
           lodging_map.removeControl(lodging_map.zoomControl);
@@ -509,7 +509,7 @@
 
       function loadEatsMap() {
         var map_eats = L
-          .map('eats_map', { fullscreenControl: true })
+          .map('eats_map', { fullscreenControl: { pseudoFullscreen: true } })
           .setView([34.2, -116.4], 10.5);
         if (L.Browser.mobile) {
           map_eats.removeControl(map_eats.zoomControl);
@@ -550,7 +550,7 @@
       function loadSightsMap() {
         console.log('hi');
         var map_sights = L
-          .map('sights_map', { fullscreenControl: true })
+          .map('sights_map', { fullscreenControl: { pseudoFullscreen: true } })
           .setView([34.0, -115.8], 7.5);
         if (L.Browser.mobile) {
           map_sights.removeControl(map_sights.zoomControl);
