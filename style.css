@@ -405,9 +405,6 @@ html, body {
     margin-left: 0px;
     margin-top: 40px;
   }
-  .box6 {
-    visibility: hidden;
-  }
   #todo {
     flex-direction: column !important;
   }
