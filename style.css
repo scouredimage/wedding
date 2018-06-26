@@ -282,9 +282,6 @@ html, body {
 
 #toggle_locations_map {
   visibility: hidden;
-}
-#toggle_locations_map {
-  visibility: visible;
   align-self: flex-end;
 }
 #toggle_locations_list {
@@ -435,36 +432,14 @@ html, body {
   }
   #toggle_locations_map {
     visibility: visible;
-    align-self: flex-end;
-    margin-top: 10px;
-  }
-  #toggle_locations_list {
-    align-self: flex-end;
-    margin-top: 10px;
   }
   #locations_map {
     height: 375px;
     width: 100%;
   }
-  #toggle_eats_map {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
-  #toggle_eats_list {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
   #eats_map {
     height: 350px;
     width: 100%;
-  }
-  #toggle_sights_map {
-    align-self: flex-end;
-    margin-top: 10px;
-  }
-  #toggle_sights_list {
-    align-self: flex-end;
-    margin-top: 10px;
   }
   #sights_map {
     height: 290px;
