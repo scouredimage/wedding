@@ -425,7 +425,7 @@ html, body {
     background-image: url(bg1.png);
     background-repeat: no-repeat;
     background-position: left;
-    background-attachment: fixed;
+    background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -435,7 +435,7 @@ html, body {
     background-image: url(borderL.png);
     background-repeat: no-repeat;
     background-position: left top;
-    background-attachment: fixed;
+    background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -445,7 +445,7 @@ html, body {
     background-image: url(borderL.png);
     background-repeat: no-repeat;
     background-position: left top;
-    background-attachment: fixed;
+    background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -455,7 +455,7 @@ html, body {
     background-image: url(borderL.png);
     background-repeat: no-repeat;
     background-position: left top;
-    background-attachment: fixed;
+    background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -465,7 +465,7 @@ html, body {
     background-image: url(borderL.png);
     background-repeat: no-repeat;
     background-position: left top;
-    background-attachment: fixed;
+    background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
