@@ -343,11 +343,16 @@ html, body {
   #directions .info {
     margin-bottom: 10px;
   }
+  #thingstodo .info {
+    margin-bottom: 10px;
+  }
   #accomodations_title {
     font-size: 2em;
   }
   #thingstodo_title {
     font-size: 2em;
+    padding-top: 10px;
+    padding-bottom: 0;
   }
   #map {
     visibility: hidden;
@@ -380,33 +385,38 @@ html, body {
   }
   .box4 {
     width: 100%;
-    height: 500px;
+    height: 520px;
     margin-left: 0px;
     margin-top: 30px;
   }
   .box5 {
     width: 100%;
-    height: 500px;
+    height: 465px;
     margin-left: 0px;
     margin-top: 100px;
     display: block;
   }
   .box6 {
     width: 100%;
-    height: 450px;
+    height: 400px;
     display: block;
     margin-left: -345px;
-    margin-top: 620px;
+    margin-top: 580px;
+  }
+  #locations_map {
+    height: 350px;
+    width: 100%;
+  }
+  #eats_map {
+    height: 350px;
+    width: 100%;
   }
   #sights_map {
-    height: 300px;
+    height: 290px;
     width: 100%;
   }
   #todo {
     flex-direction: column !important;
-  }
-  #toggle_eats_map {
-    visibility: hidden;
   }
   .white-fill {
     background-color: rgba(255, 255, 255, 0.90);
