@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" integrity="sha256-iYUgmrapfDGvBrePJPrMWQZDcObdAcStKBpjP3Az+3s=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.0.6/dist/css/leaflet.extra-markers.min.css">
     <link href="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css" rel="stylesheet" />
@@ -34,18 +35,55 @@
         </div>
       <img src="scroll.png" class="scroll" alt="scroll">
     </div>
+    <div class="section" id="navpage">
+      <img src="logo.png" class="logo" alt="logo">
+      <div class="container">
+        <div class="polaroids row">
+          <div class="rsvp col-sm-5 align-self-center">
+            <a href="#rsvp" title="RSVP">
+              <img alt="RSVP" src="snow.jpg">
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-6">
+                <a href="#page3" title="Details">
+                  <img alt="Details" src="beach.jpg">
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a href="#page4" title="Directions">
+                  <img alt="Directions" src="desert.jpg">
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <a href="#page6" title="Things To Do">
+                  <img alt="Things To Do" src="dog.jpg">
+                </a>
+              </div>
+              <div class="col-sm-6">
+                <a href="#page5" title="Lodging">
+                  <img alt="Lodging" src="eclipse.jpg">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="section" id="details">
       <img src="logo.png" class="logo" alt="logo">
       <div class="container">
         <div data-depth="0.2" class="white-fill shadow box2">
-          <div class="col-md-10 col-md-push-1">
+          <div class="col-md-12">
             <h2 id="details_title">Details</h2>
-            <div class="program col-md-11 col-md-push-1">
+            <div class="program col-md-12">
               <div class="info">
                 <h3>Venue</h3>
                 <strong>Mojave Sands Motel</strong>
-                <br>62121 Twentynine Palms Highway
-                <br>Joshua Tree, CA 92252
+                <br>62121 Twentynine Palms Highway, Joshua Tree, CA 92252
               </div>
               <div class="info">
                 <h3>Wedding Program</h3>
@@ -60,6 +98,13 @@
                 <h3>After Party</h3>
                 <strong>Joshua Tree Saloon</strong>
                 <br>61835 Twentynine Palms Highway
+              </div>
+              <div class="info">
+                <h3>Weather & Attire</h3>
+                <p>Days will be warm and dry (~90F) and nights will be cool (~65F).
+                  <br>Ceremony and reception will be held outdoors.
+Dress in whatever makes you feel good.
+                </p>
               </div>
             </div>
           </div>
@@ -219,9 +264,9 @@
       <div class="container">
         <div class="d-flex flex-row">
           <div data-depth="0.2" class="white-fill shadow box5">
-            <div class="col-md-10 col-md-push-1">
-              <h2 id="thingstodo_title">eat + drink</h2>
-              <div class="program col-md-11 col-md-push-1">
+            <div class="col-md-12">
+              <h2 id="thingstodo_title">eat & drink</h2>
+              <div class="program col-md-12">
                 <div class="flip">
                   <div id="eats_card" class="card">
                     <div class="face front">
@@ -270,9 +315,9 @@
             </div>
           </div>
           <div data-depth="0.2" class="white-fill shadow box6">
-            <div class="col-md-10 col-md-push-1">
+            <div class="col-md-12">
               <h2 id="thingstodo_title">explore</h2>
-              <div class="program col-md-11 col-md-push-1">
+              <div class="program col-md-12">
                 <div class="flip">
                   <div id="sights_card" class="card">
                     <div class="face front">
@@ -335,6 +380,7 @@
   <script type="text/javascript">
     $(document).ready(function () {
       $('#outer-wrapper').fullpage({
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
         css3: true,
         responsiveHeight: 330,
         controlArrows: false,

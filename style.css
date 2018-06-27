@@ -16,6 +16,8 @@ html, body {
 }
 
 #spotlight h2 {
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: bold;
   font-size: 1.5em;
   color: #e59082;
   text-align: left;
@@ -70,7 +72,7 @@ html, body {
 }
 
 .box5 {
-  width: 500px;
+  width: 450px;
   height: 550px;
   display: flex;
   margin-left:100px;
@@ -78,7 +80,7 @@ html, body {
 }
 
 .box6 {
-  width: 500px;
+  width: 450px;
   height: 550px;
   display: flex;
   margin-left:40px;
@@ -114,11 +116,12 @@ html, body {
 }
 
 #details_title {
-  color: #7c8e8e;
+  font-family: 'Nothing You Could Do', cursive;
+  color: #e59082;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  font-size: 4em;
+  font-size: 3em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -126,11 +129,12 @@ html, body {
 }
 
 #directions_title {
-  color: #7c8e8e;
+  font-family: 'Nothing You Could Do', cursive;
+  color: #e59082;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  font-size: 4em;
+  font-size: 3em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -138,11 +142,12 @@ html, body {
 }
 
 #accomodations_title {
-  color: #7c8e8e;
+  font-family: 'Nothing You Could Do', cursive;
+  color: #e59082;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  font-size: 4em;
+  font-size: 3em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -150,11 +155,12 @@ html, body {
 }
 
 #thingstodo_title {
-  color: #7c8e8e;
+  font-family: 'Nothing You Could Do', cursive;
+  color: #e59082;
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  font-size: 3.5em;
+  font-size: 3em;
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
@@ -198,6 +204,123 @@ html, body {
   background-size: 800px,
     auto,
     auto;
+}
+
+#navpage {
+  background:
+    url(borderR.png),
+    url(borderL.png);
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-position:
+    right top,
+    left top;
+  background-size:
+    auto,
+    auto;
+}
+
+@media screen and (max-width: 767px) {
+  .polaroids div:nth-child(n+2) {
+    display: none;
+  }
+}
+
+div.polaroids div.rsvp a {
+  align-self: center;
+  background: #fff;
+  float: right;
+  margin: 0 0 27px 30px;
+  width: auto;
+  padding: 10px 10px 15px;
+  text-align: center;
+  font-family: 'Nothing You Could Do', cursive;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  -webkit-transform: rotate(-2deg);
+  -webkit-transition: -webkit-transform .15s linear;
+  -moz-transform: rotate(-2deg);
+}
+div.polaroids a {
+  background: #fff;
+  float: left;
+  margin: 0 0 27px 30px;
+  width: auto;
+  padding: 10px 10px 15px;
+  text-align: center;
+  font-family: 'Nothing You Could Do', cursive;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+  -webkit-transform: rotate(-2deg);
+  -webkit-transition: -webkit-transform .15s linear;
+  -moz-transform: rotate(-2deg);
+}
+@media screen and (max-width: 768px) {
+  div.polaroids div a {
+    margin-left: 0;
+  }
+}
+div.polaroids div.rsvp img {
+  display: block;
+  width: 300px;
+  margin-bottom: 12px;
+}
+div.polaroids img {
+  display: block;
+  width: 225px;
+  margin-bottom: 12px;
+}
+div.polaroids a:after {
+  content: attr(title);
+}
+
+div.polaroids div:nth-child(even) a {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}
+div.polaroids div:nth-child(3n) a {
+   -webkit-transform: none;
+   position: relative;
+   top: -5px;
+   -moz-transform: none;
+ }
+div.polaroids div:nth-child(5n) a {
+  -webkit-transform: rotate(5deg);
+  position: relative; right: 5px;
+  -moz-transform: rotate(5deg);
+}
+div.polaroids div:nth-child(8n) a {
+  position: relative;
+  right: 5px;
+  top: 8px;
+}
+div.polaroids div:nth-child(11n) a {
+  position: relative;
+  left: -5px;
+  top: 3px;
+}
+
+div.polaroids div.messy a {
+  margin-top: -400px;
+  position: relative;
+  left: 160px;
+}
+
+div.polaroids div a:hover {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+  position: relative; z-index: 5;
 }
 
 #details {
@@ -272,12 +395,12 @@ html, body {
 
 #eats_map {
   height: 350px;
-  width: 450px;
+  width: 100%;
 }
 
 #sights_map {
   height: 350px;
-  width: 450px;
+  width: 100%;
 }
 
 #toggle_locations_map {
