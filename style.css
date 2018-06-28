@@ -115,6 +115,22 @@ html, body {
   opacity: 0.0;
 }
 
+.footer h2 {
+  color: rgb(150, 137, 133);
+  text-align: center;
+  position: absolute;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+}
+.footer #dates {
+  font-size: 1.25em;
+}
+
 #details_title {
   font-family: 'Nothing You Could Do', cursive;
   color: #e59082;
@@ -125,7 +141,7 @@ html, body {
   align-self: flex-start;
   padding-top: 25px;
   padding-left: 15px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 #directions_title {
@@ -202,23 +218,28 @@ html, body {
     right top,
     left top;
   background-size: 800px,
-    auto,
-    auto;
+    1250px,
+    1250px;
 }
 
 #navpage {
   background:
+    url(bg1alpha.png),
     url(borderR.png),
     url(borderL.png);
   background-repeat:
     no-repeat,
+    no-repeat,
     no-repeat;
   background-position:
+    right bottom,
     right top,
     left top;
   background-size:
-    auto,
-    auto;
+    300px,
+    1250px,
+    1250px;
+
 }
 
 @media screen and (max-width: 767px) {
@@ -239,7 +260,7 @@ div.polaroids div.rsvp a {
   text-transform: uppercase;
   text-decoration: none;
   color: #333;
-  font-size: 18px;
+  font-size: 20px;
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -webkit-transform: rotate(-2deg);
@@ -257,7 +278,7 @@ div.polaroids a {
   text-transform: uppercase;
   text-decoration: none;
   color: #333;
-  font-size: 18px;
+  font-size: 20px;
   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
   -webkit-transform: rotate(-2deg);
@@ -271,12 +292,12 @@ div.polaroids a {
 }
 div.polaroids div.rsvp img {
   display: block;
-  width: 300px;
+  width: 315px;
   margin-bottom: 12px;
 }
 div.polaroids img {
   display: block;
-  width: 225px;
+  width: 240px;
   margin-bottom: 12px;
 }
 div.polaroids a:after {
@@ -334,8 +355,8 @@ div.polaroids div a:hover {
     right top,
     left top;
   background-size: 600px,
-    auto,
-    auto;
+    1250px,
+    1250px;
 }
 
 #directions {
@@ -349,38 +370,46 @@ div.polaroids div a:hover {
     right top,
     left top;
   background-size: 600px,
-    auto,
-    auto;
+    1250px,
+    1250px;
 }
 
 #accomodations {
   background:
+    url(bg1alpha.png),
     url(borderR.png),
     url(borderL.png);
   background-repeat:
     no-repeat,
+    no-repeat,
     no-repeat;
   background-position:
+    right bottom,
     right top,
     left top;
   background-size:
-    auto,
-    auto;
+    300px,
+    1250px,
+    1250px;
 }
 
 #thingstodo {
   background:
+    url(bg1alpha.png),
     url(borderR.png),
     url(borderL.png);
   background-repeat:
     no-repeat,
+    no-repeat,
     no-repeat;
   background-position:
+    right bottom,
     right top,
     left top;
   background-size:
-    auto,
-    auto;
+    300px,
+    1250px,
+    1250px;
 }
 
 #map {
@@ -389,7 +418,7 @@ div.polaroids div a:hover {
   left: 50%;
   width: 450px;
   margin-top: -200px;
-  height: 400px;
+  height: 350px;
   margin-left: 80px;
 }
 
@@ -426,16 +455,19 @@ div.polaroids div a:hover {
   margin-top: 10px;
 }
 
-#accomodations .info {
-  margin-bottom: 10px;
-}
+.map-legend-bg{visibility: hidden}
+.map-legend:hover i.map-legend-fg{color:#fff}
+.map-legend:hover i.map-legend-bg{visibility: visible}
 
 .info {
   margin-bottom: 20px;
 }
+#accomodations .info {
+  margin-bottom: 10px;
+}
 
 .subinfo {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .flip {
@@ -473,21 +505,30 @@ div.polaroids div a:hover {
   .inner{margin:0px !important;}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #navpage {
+    display: none;
+  }
   #spotlight h1 {
     font-size: 4em;
   }
   #details h3 {
     font-size: 1em;
+    margin-bottom: 5px;
   }
   #directions h3 {
     font-size: 1em;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
   #details_title {
     font-size: 3em;
+    padding-bottom: 0;
   }
   #directions_title {
     font-size: 3em;
+    padding-bottom: 0;
+  }
+  #details .info {
+    margin-bottom: 12px;
   }
   #directions .info {
     margin-bottom: 10px;
@@ -627,5 +668,8 @@ div.polaroids div a:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+  .footer {
+    visibility: hidden;
   }
 }
