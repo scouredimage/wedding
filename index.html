@@ -524,13 +524,28 @@ Dress in whatever makes you feel good.
           markers[i].addTo(lodging_map);
           if (!L.Browser.mobile) {
             markers[i]
-            .bindTooltip(locations[i].popup, { offset: L.point({x: 10, y: -30}) })
-            .on('mouseover', mouseover)
-            .on('mouseout', mouseout);
+              .bindTooltip(locations[i].popup, { offset: L.point({x: 10, y: -30}) })
+              .on('mouseover', mouseover)
+              .on('mouseout', mouseout);
+
+            var row = $(locations[i].legend).parent().parent();
+            if (row != undefined) {
+              row.hover(function() {
+                var marker = markers[i];
+                return function(e) {
+                  marker.openTooltip();
+                }
+              }(), function() {
+                var marker = markers[i];
+                return function(e) {
+                  marker.closeTooltip();
+                }
+              }());
+            }
           } else {
-            var desc = $(locations[i].legend + "_desc");
-            if (desc[0] != undefined) {
-              markers[i].bindPopup(desc[0].innerHTML);
+            var desc = $(locations[i].legend + "_desc")[0];
+            if (desc != undefined) {
+              markers[i].bindPopup(desc.innerHTML);
             } else {
               markers[i].bindPopup(locations[i].popup);
             }
