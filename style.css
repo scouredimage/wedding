@@ -3,6 +3,8 @@ html, body {
   padding: 0;
   overflow-x: hidden!important;
   font-family: "Raleway";
+  overflow: unset;
+  background-color: unset;
 }
 
 #spotlight h1 {
@@ -344,6 +346,66 @@ div.polaroids div a:hover {
   position: relative; z-index: 5;
 }
 
+#rsvp {
+  background:
+    url(bg1alpha.png),
+    url(borderR.png),
+    url(borderL.png);
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position:
+    right bottom,
+    right top,
+    left top;
+  background-size:
+    300px,
+    1250px,
+    1250px;
+}
+
+.typeahead.dropdown-menu,
+span.twitter-typeahead .tt-menu {
+  min-width: 100%;
+  background: white;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  border-radius: 0;
+  font-size: 1.2rem;
+}
+span.twitter-typeahead .tt-suggestion {
+  color: #4285F4;
+  cursor: pointer;
+  padding: 1rem;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+span.twitter-typeahead .active.tt-suggestion,
+span.twitter-typeahead .tt-suggestion.tt-cursor,
+span.twitter-typeahead .active.tt-suggestion:focus,
+span.twitter-typeahead .tt-suggestion.tt-cursor:focus,
+span.twitter-typeahead .active.tt-suggestion:hover,
+span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
+  background-color: #EEEEEE;
+  color: #4285F4;
+}
+label.active {
+  color: #4285F4 !important;
+}
+.invite-clear-button {
+  position: absolute;
+  z-index: 2;
+  top: 1.8rem;
+  right: 0;
+  border: none;
+  background: 0 0;
+  display: none;
+}
+.bmd-form-group {
+  padding-top: 1.25rem;
+}
+
 #details {
   background: url(bg2.png),
     url(borderR.png),
@@ -487,6 +549,7 @@ div.polaroids div a:hover {
   transition: 0.5s;
   background-color: unset;
   border: 0;
+  box-shadow: none;
 }
 .flip .card .face {
   -webkit-backface-visibility: hidden ;
