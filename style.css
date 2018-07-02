@@ -133,6 +133,22 @@ html, body {
   font-size: 1.25em;
 }
 
+#rsvp_title {
+  font-family: 'Nothing You Could Do', cursive;
+  color: #e59082;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 3em;
+  align-self: flex-start;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+#rsvp_by {
+  font-size: 0.5em;
+}
+
 #details_title {
   font-family: 'Nothing You Could Do', cursive;
   color: #e59082;
@@ -348,18 +364,22 @@ div.polaroids div a:hover {
 
 #rsvp {
   background:
+    url(rsvp.jpg),
     url(bg1alpha.png),
     url(borderR.png),
     url(borderL.png);
   background-repeat:
     no-repeat,
     no-repeat,
+    no-repeat,
     no-repeat;
   background-position:
+    right center,
     right bottom,
     right top,
     left top;
   background-size:
+    550px,
     300px,
     1250px,
     1250px;
@@ -525,7 +545,7 @@ label.active {
   margin-bottom: 20px;
 }
 #accomodations .info {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .subinfo {

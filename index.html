@@ -94,7 +94,7 @@
       <div class="container">
         <div data-depth="0.2" class="white-fill shadow box2">
           <div class="col-md-12">
-            <h2 id="details_title">RSVP</h2>
+            <h2 id="rsvp_title">RSVP <span id="rsvp_by">by august 15th</span></h2>
             <form id="rsvp-form">
               <div class="form-group">
                 <input type="text" class="form-control typeahead" id="input-invite-name" required>
@@ -108,14 +108,20 @@
               </div>
               <div id="pluses"></div>
               <div id="rsvp-buttons" style="display: none;">
-                <button type="submit" class="btn btn-success">
+                <button id="rsvp-yes" type="submit" class="btn btn-success">
                   <span class="fa-stack">
                     <i class="far fa-circle fa-stack-2x"></i>
                     <i id="num-attendees" class="fa fa-stack-1x char-overlay">1</i>
                   </span>
                   Can't wait!
                 </button>
-                <button class="btn btn-danger">Can't come</button>
+                <button id="rsvp-no" class="btn btn-danger">
+                  <span class="fa-stack">
+                    <i class="far fa-circle fa-stack-2x"></i>
+                    <i id="rsvp-no-icon" class="fa fa-stack-1x fa-times"></i>
+                  </span>
+                  Can't come
+                </button>
               </div>
             </form>
           </div>
@@ -198,16 +204,16 @@ Dress in whatever makes you feel good.
       <div class="container">
         <div class="d-flex flex-row">
           <div data-depth="0.2" class="white-fill shadow box4">
-            <div class="col-md-10 col-md-push-1">
+            <div class="col-md-12">
               <h2 id="accomodations_title">lodging</h2>
-              <div class="program col-md-11 col-md-push-1">
+              <div class="program col-md-12">
                 <div class="flip">
                   <div id="locations_card" class="card">
                     <div class="face front">
                       <div class="well inner">
                           <div class="info">
                             <div class="row" style="display:flex; align-items: center;">
-                              <div class="col-md-11">
+                              <div class="col-md-12">
                                 <strong>AirBnB</strong>
                                 <br><a href="https://www.airbnb.com/s/Joshua-Tree--CA--United-States/homes?refinement_paths%5B%5D=%2Fhomes&place_id=ChIJAVDJ-0XQ2oARw2sUAFr-5-Q&checkin=2018-09-21&checkout=2018-09-23&adults=2&query=Joshua%20Tree%2C%20CA%2C%20United%20States&allow_override%5B%5D=&s_tag=QrHh-sq1" target="_blank">https://www.airbnb.com/</a>
                               </div>
@@ -730,21 +736,8 @@ Dress in whatever makes you feel good.
       $('.footer-clone').append($footer);
 
       $.get(
-        'https://5rofgdeuke.execute-api.us-east-1.amazonaws.com/production/rsvp',
-        function(data) {
-          var invited = [];
-          data.map(e => {
-            invited.push({
-              invite: e[1],
-              first: e[2],
-              last: e[3],
-              full: `${e[2]} ${e[3]}`,
-              plus: e[4],
-              total: e[5]
-            });
-          });
-          console.log(invited);
-
+        'https://gd4xtkstd1.execute-api.us-east-1.amazonaws.com/production/rsvp2',
+        function(invited) {
           var inviteList = invited.map(i => i.invite);
           var inviteList = new Bloodhound({
               datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -762,6 +755,8 @@ Dress in whatever makes you feel good.
               limit: 10
           });
 
+          var lastSelected = '';
+
           $('.typeahead').on('focus', function() {
             $(this).parent().siblings().addClass('active');
           }).on('blur', function() {
@@ -769,24 +764,48 @@ Dress in whatever makes you feel good.
               $(this).parent().siblings().removeClass('active');
             }
           }).on('typeahead:selected', function(evt, item) {
-            $('#input-invite-name').attr('readonly', 'readonly');
             var selected = invited.filter(i => i.invite == item)[0];
-            console.log(selected);
+            if (selected.invite == lastSelected) {
+              return;
+            }
+            lastSelected = selected.invite;
+
+            $('#input-invite-name').attr('readonly', 'readonly');
+
+            var status;
+            switch(selected.rsvped) {
+              case 'Y':
+                status = 'Attending <i class="fas fa-check" style="color: green;"></i>'
+                break;
+              case 'N':
+                status = 'Not Attending <i class="fas fa-ban" style="color: red;"></i>'
+                break;
+              default:
+                status = 'Attendees';
+            }
             var attendees = `
               <fieldset class="form-group">
-                <legend>Attendees</legend>
+                <legend id="rsvp-legend">${status}</legend>
                 <div class="form-group" id="attendee-1">
-                  <input type="text" class="form-control" placeholder="${selected.full}" readonly></input>
+                  <input type="text" class="form-control" placeholder="${selected.first} ${selected.last}" readonly></input>
                 </div>`
             for (var i = 0; i < parseInt(selected.plus); i++) {
+              var value = "";
+              if (selected.pluses[i]) {
+                value = `value="${selected.pluses[i]}"`;
+              }
               attendees = attendees + `
                 <div class="form-group" id="plus-${i}">
-                   <input type="text" class="form-control plus-input" id="input-plus-${i}" placeholder="${selected.first}'s +${i + 1}"></input>
+                   <input type="text" class="form-control plus-input" id="input-plus-${i}" placeholder="${selected.first}'s +${i + 1}" ${value}></input>
                 </div>`;
+            }
+            var diet = "";
+            if (selected.diet) {
+              diet = `value="${selected.diet}"`;
             }
             $('#pluses').append(attendees + `
                 <div class="form-group">
-                  <input type="text" class="form-control" id="input-diet" placeholder="Any dietary restrictions?"></input>
+                  <input type="text" class="form-control" id="input-diet" placeholder="Any dietary restrictions?" ${diet}></input>
                 </div>
               </fieldset>`);
 
@@ -796,7 +815,7 @@ Dress in whatever makes you feel good.
               var num = Array.prototype
                 .map.call($('.plus-input'), (i => i.value.length > 0))
                 .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-              $('#num-attendees').text(num + 1);
+              $('#num-attendees').replaceWith(`<i id="num-attendees" class="fa fa-stack-1x char-overlay">${num + 1}</i>`);
             });
           });
 
@@ -812,6 +831,61 @@ Dress in whatever makes you feel good.
             $('#rsvp-form').removeClass('was-validated');
             $('#rsvp-form').addClass('was-reset');
             $('#input-invite-name').attr('readonly', null);
+            $('#rsvp-no').prop("disabled", false);
+            $('#rsvp-yes').prop("disabled", false);
+            lastSelected = '';
+          });
+
+          $('#rsvp-yes').click(function(e) {
+            $('#rsvp-no').prop("disabled", true);
+            $('#num-attendees').replaceWith('<i id="num-attendees" class="fas fa-spinner fa-spin"></i>');
+            var payload = {
+              invite: $('#input-invite-name').val(),
+              plus: Array.prototype.map.call($('.plus-input'), (i => i.value)),
+              diet: $('#input-diet').val()
+            };
+            $.ajax({
+              type: 'POST',
+              url: 'https://gd4xtkstd1.execute-api.us-east-1.amazonaws.com/production/rsvp2',
+              crossDomain: true,
+              data: JSON.stringify(payload),
+              contentType: 'application/json',
+              dataType: 'json',
+              success: function(response) {
+                $('#rsvp-legend').html('Attending <i class="fas fa-check" style="color: green;"></i>');
+                $('#num-attendees').replaceWith('<i id="num-attendees" class="fas fa-check"></i>');
+                var selected = invited.filter(i => i.invite == payload.invite)[0];
+                selected.rsvped = 'Y';
+                selected.pluses = payload.plus;
+                selected.diet = payload.diet;
+              }
+            });
+          });
+          $('#rsvp-no').click(function(e) {
+            $('#rsvp-yes').prop("disabled", true);
+            $('#rsvp-no-icon').replaceWith('<i id="rsvp-no-icon" class="fas fa-spinner fa-spin"></i>');
+            var payload = {
+              rsvp: 'N',
+              invite: $('#input-invite-name').val(),
+              plus: [],
+              diet: ''
+            };
+            $.ajax({
+              type: 'POST',
+              url: 'https://gd4xtkstd1.execute-api.us-east-1.amazonaws.com/production/rsvp2',
+              crossDomain: true,
+              data: JSON.stringify(payload),
+              contentType: 'application/json',
+              dataType: 'json',
+              success: function(response) {
+                $('#rsvp-legend').html('Not Attending <i class="fas fa-ban" style="color: red;"></i>');
+                $('#rsvp-no-icon').replaceWith('<i id="rsvp-no-icon" class="fas fa-spinner fa-times"></i>');
+                var selected = invited.filter(i => i.invite == payload.invite)[0];
+                selected.rsvped = 'N';
+                selected.pluses = payload.plus;
+                selected.diet = payload.diet;
+              }
+            });
           });
         }
       );
