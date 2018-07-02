@@ -364,23 +364,19 @@ div.polaroids div a:hover {
 
 #rsvp {
   background:
-    url(rsvp.jpg),
-    url(bg1alpha.png),
+    url(rsvp.png),
     url(borderR.png),
     url(borderL.png);
   background-repeat:
     no-repeat,
     no-repeat,
-    no-repeat,
     no-repeat;
   background-position:
     right center,
-    right bottom,
     right top,
     left top;
   background-size:
-    550px,
-    300px,
+    600px,
     1250px,
     1250px;
 }
@@ -602,6 +598,10 @@ label.active {
     font-size: 1em;
     margin-bottom: 3px;
   }
+  #rsvp_title {
+    font-size: 2em;
+    padding-bottom: 0;
+  }
   #details_title {
     font-size: 3em;
     padding-bottom: 0;
@@ -677,6 +677,9 @@ label.active {
     margin-left: -345px;
     margin-top: 580px;
   }
+  .flip .card {
+    font-size: 0.8rem;
+  }
   #toggle_locations_map {
     visibility: visible;
   }
@@ -706,6 +709,16 @@ label.active {
     background-image: url(bg1.png);
     background-repeat: no-repeat;
     background-position: left;
+    background-attachment: unset;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #rsvp {
+    background-image: url(borderL.png);
+    background-repeat: no-repeat;
+    background-position: left top;
     background-attachment: unset;
     -webkit-background-size: cover;
     -moz-background-size: cover;
