@@ -534,8 +534,10 @@ label.active {
 }
 
 .map-legend-bg{visibility: hidden}
-.map-legend:hover i.map-legend-fg{color:#fff}
-.map-legend:hover i.map-legend-bg{visibility: visible}
+@media (min-width: 1025px) {
+  .map-legend:hover i.map-legend-fg{color:#fff}
+  .map-legend:hover i.map-legend-bg{visibility: visible}
+}
 
 .info {
   margin-bottom: 20px;

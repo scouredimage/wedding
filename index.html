@@ -776,6 +776,7 @@ Dress in whatever makes you feel good.
             switch(selected.rsvped) {
               case 'Y':
                 status = 'Attending <i class="fas fa-check" style="color: green;"></i>'
+                $('#num-attendees').replaceWith(`<i id="num-attendees" class="fa fa-stack-1x char-overlay">${parseInt(selected.plus) + 1}</i>`);
                 break;
               case 'N':
                 status = 'Not Attending <i class="fas fa-ban" style="color: red;"></i>'
@@ -796,7 +797,7 @@ Dress in whatever makes you feel good.
               }
               attendees = attendees + `
                 <div class="form-group" id="plus-${i}">
-                   <input type="text" class="form-control plus-input" id="input-plus-${i}" placeholder="${selected.first}'s +${i + 1}" ${value}></input>
+                   <input type="text" class="form-control plus-input" id="input-plus-${i}" placeholder="Enter name of ${selected.first}'s +${i + 1}" ${value}></input>
                 </div>`;
             }
             var diet = "";
