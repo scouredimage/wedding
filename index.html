@@ -97,14 +97,14 @@
             <h2 id="rsvp_title">RSVP <span id="rsvp_by">by august 15th</span></h2>
             <form id="rsvp-form">
               <div class="form-group">
-                <input type="text" class="form-control typeahead" id="input-invite-name" required>
+                <input type="text" class="form-control typeahead" id="input-invite" required>
                 <button id="input-invite-clear" class="invite-clear-button">
                   <span class="fa fa-times" aria-hidden="true" style="color: rgb(173, 181, 189)"></span>
                 </button>
                 <div class="invalid-feedback">
                   Please enter name as it appeaars on the invite.
                 </div>
-              <label for="input-invite-name" class="bmd-label-floating" id="label-invite-name">Name on invite</label>
+              <label for="input-invite" class="bmd-label-floating" id="label-invite">Invite addressee</label>
               </div>
               <div id="pluses"></div>
               <div id="rsvp-buttons" style="display: none;">
@@ -770,7 +770,7 @@ Dress in whatever makes you feel good.
             }
             lastSelected = selected.invite;
 
-            $('#input-invite-name').attr('readonly', 'readonly');
+            $('#input-invite').attr('readonly', 'readonly');
 
             var status;
             switch(selected.rsvped) {
@@ -820,18 +820,18 @@ Dress in whatever makes you feel good.
             });
           });
 
-          $('#input-invite-name').on('input', function() {
+          $('#input-invite').on('input', function() {
             $('#input-invite-clear').toggle(!!this.value);
             $('#rsvp-form').removeClass('was-reset');
           });
           $('#input-invite-clear').on("touchstart click", function(e) {
-            $('#input-invite-name').val('').trigger('input');
+            $('#input-invite').val('').trigger('input');
             $('#input-invite-clear').parent().toggleClass('is-filled');
             $('#pluses').empty();
             $('#rsvp-buttons').hide();
             $('#rsvp-form').removeClass('was-validated');
             $('#rsvp-form').addClass('was-reset');
-            $('#input-invite-name').attr('readonly', null);
+            $('#input-invite').attr('readonly', null);
             $('#rsvp-no').prop("disabled", false);
             $('#rsvp-yes').prop("disabled", false);
             lastSelected = '';
@@ -841,7 +841,7 @@ Dress in whatever makes you feel good.
             $('#rsvp-no').prop("disabled", true);
             $('#num-attendees').replaceWith('<i id="num-attendees" class="fas fa-spinner fa-spin"></i>');
             var payload = {
-              invite: $('#input-invite-name').val(),
+              invite: $('#input-invite').val(),
               plus: Array.prototype.map.call($('.plus-input'), (i => i.value)),
               diet: $('#input-diet').val()
             };
@@ -867,7 +867,7 @@ Dress in whatever makes you feel good.
             $('#rsvp-no-icon').replaceWith('<i id="rsvp-no-icon" class="fas fa-spinner fa-spin"></i>');
             var payload = {
               rsvp: 'N',
-              invite: $('#input-invite-name').val(),
+              invite: $('#input-invite').val(),
               plus: [],
               diet: ''
             };
